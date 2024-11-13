@@ -1,0 +1,249 @@
+body {
+    font-family: 'Segoe UI';
+    color: aliceblue;
+    background-color: rgb(34, 37, 38);
+    height: 100vh;
+    margin: 0;
+    overflow-y: auto;
+    display: block;
+}
+header {
+    display: flex;
+}
+header img{
+    margin: 10px;
+}
+.form-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 3 colunas de largura igual */
+    gap: 20px; /* Espaçamento entre as cartas */
+    padding: 20px;
+    margin: 20px;
+    margin-top: 0px;
+    background-color: rgb(28, 31, 32);
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 90%; 
+    justify-content: center;
+}
+.card {
+    background-color: black;
+    color: aliceblue;
+    border: 1px solid #444;
+    border-radius: 30px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.suCard{
+    background-color: black;
+    color: aliceblue;
+    border: 1px solid #444;
+    border-radius: 30px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 125px;
+    margin-right: 10px;
+}
+.detalhes-img{
+    margin-left: 100px;
+}
+.card-img {
+    width: 100%;
+    height: auto;
+}
+.card img {
+    border-radius: 4px;
+}
+.card h3,
+.suCard h3 {
+    font-size: 18px;
+    margin: 10px 0 5px;
+}
+.card ,
+.suCard p {
+    font-size: 14px;
+    color: #ccc;
+}
+.card button,
+.suCard button {
+    background-color: #007BFF;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.card button:hover,
+.suCard button:hover {
+    background-color: #0056b3;
+}
+main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    border-bottom: 1px solid;
+}
+.voltar{
+    border-radius: 10px;
+    border: 0px;
+}
+.qrcode{
+    width: 200px;
+}
+.detalhes-carta{
+    margin-left: 100px;
+
+}
+.detalhes-carta p {
+    max-width: 500px;
+}
+.info-card{
+    border-top: 1px solid;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    max-width: 400px;
+}
+.qr-detalhes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+}
+a {
+    text-decoration: none;
+    color: #ccc;
+
+}
+
+.sugestoes-carta {
+    margin-top: 30px;
+}
+
+.sugestoes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.sugestao-card {
+    width: 180px;
+    background-color: #1e1e1e;
+    color: aliceblue;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+}
+
+.sugestao-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.sugestao-card h4 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.sugestao-card p {
+    font-size: 14px;
+    color: #ccc;
+}
+.ul-sugestoes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    padding-top: 0;
+}
+.text-det{
+    margin-left: 10px;
+}
+.filter-container{
+    display: grid;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid;
+    border-radius: 20px;
+    width: 250px;
+    max-width: 250px;
+}
+.filtros{
+    display: grid;
+    background: none;
+}
+.btn-filtros{
+    background-color: #007BFF;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.btn-tipo , 
+.btn-atributo{
+    background: none;
+    color: aliceblue;
+    border-radius: 10px;
+    border: 1px solid;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.title-fil{
+    margin: 0px;
+}
+.list-atri{
+    max-height: 210px;
+    overflow: auto;
+}
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 12px; 
+    height: 12px; 
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .5);
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: #7e7e7e;
+    border-radius: 10px;
+}
+input[type="text"] {
+    margin-top: 40px;
+    margin-left: 100px;
+    height: 30px;
+    width: 400px;
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid;
+    border-radius: 20px;
+    padding-left: 20px;
+    font-size: 15px;
+}
+input[type="text"]::placeholder {
+    color: #ffffff; /* Cor do placeholder */
+    padding-left: 0px ;
+}
+.artExtra{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 15px;
+    padding-left: 100px;
+    max-width: 400px;
+}
+.artExtra img{
+    width: 75%;
+}
+.art h1{
+    padding-left: 100px;
+}

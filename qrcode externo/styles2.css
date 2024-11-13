@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,600,700");
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #ffeba7;
+  background-color: #1f2029;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.card-3d-wrap {
+  justify-content: center;
+  display: flex;
+  position: relative;
+  width: 440px;
+  max-width: 100%;
+  height: 400px;
+  perspective: 800px;
+}
+
+.checkbox {
+  display: none;
+}
+
+.rotate-button {
+  display: block;
+  max-width: 200px;
+  width: 100%;
+  height: 100%;
+  background: none;
+  cursor: pointer;
+}
+
+.card-3d-wrapper {
+  max-width: 200px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 600ms ease-out;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2b2e38;
+  backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.checkbox:checked ~ .rotate-button .card-3d-wrapper {
+  transform: rotateY(180deg);
+}
+
+.card-yu {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 6px;
+}
