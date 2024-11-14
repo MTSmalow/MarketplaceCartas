@@ -54,7 +54,7 @@ $cartas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <img class="qrcode" src="<?php echo $qrcode; ?>" alt="QR Code da Carta">
             </div>
         </div>
-        <div class="art">
+        <div style="display: ;" id="artsAlternativas" class="art">
             <h1>Arts alternativas:</h1>
         <div class="artExtra">
             <img id="extra1" src="" >
@@ -75,7 +75,7 @@ $cartas = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             <p><?php echo htmlspecialchars($carta['nome']); ?></p>
                             <p>Preço: <?php echo htmlspecialchars($carta['preco']); ?></p>
                     </p>
-                    <button onclick="abrirDetalhes(<?php echo "'".htmlspecialchars($carta['nome'])."','".htmlspecialchars($carta['descricao'])."','".htmlspecialchars($carta['imagemUrl'])."','".htmlspecialchars($carta['preco'])."','".htmlspecialchars($carta['tipo'])."','" .htmlspecialchars($carta['ataque'])."','".htmlspecialchars($carta['defesa'])."','".htmlspecialchars($carta['atributo'])."','".htmlspecialchars($carta['level'])."'," ?>)">ver mais</button>
+                    <button onclick="abrirDetalhes(<?php echo "'".htmlspecialchars($carta['nome'])."','".htmlspecialchars($carta['descricao'])."','".htmlspecialchars($carta['imagemUrl'])."','".htmlspecialchars($carta['preco'])."','".htmlspecialchars($carta['tipo'])."','" .htmlspecialchars($carta['ataque'])."','".htmlspecialchars($carta['defesa'])."','".htmlspecialchars($carta['atributo'])."','".htmlspecialchars($carta['level'])."','".htmlspecialchars($carta['imgExtra1'])."','".htmlspecialchars($carta['imgExtra2'])."','".htmlspecialchars($carta['imgExtra3'])."','".htmlspecialchars($carta['imgExtra4'])."'," ?>)">ver mais</button>
                 </div>
             <?php endforeach; ?>
         </ul>
@@ -106,10 +106,21 @@ $cartas = $stmt->fetchAll(PDO::FETCH_ASSOC);
             document.getElementById('carta-defesa').textContent = `Defesa: ${defesa}`;
             document.getElementById('carta-atributo').textContent = `Atributo: ${atributo}`;
             document.getElementById('carta-level').textContent = `Level: ${level}`;
-            document.getElementById('extra1').src = extra1;
-            document.getElementById('extra2').src = extra2;
-            document.getElementById('extra3').src = extra3;
-            document.getElementById('extra4').src = extra4;
+            const artsAlternativasText = document.getElementById('artsAlternativas');
+
+            if(extra1){
+                document.getElementById('extra1').src = extra1;
+                document.getElementById('extra2').src = extra2;
+                document.getElementById('extra3').src = extra3;
+                document.getElementById('extra4').src = extra4;
+                artsAlternativas.style.display = 'block'; 
+            }else{
+                document.getElementById('extra1').textContent = "";
+                document.getElementById('extra2').textContent = "";
+                document.getElementById('extra3').textContent = "";
+                document.getElementById('extra4').textContent = "";
+                artsAlternativas.style.display = 'none'; 
+            }
         }
 
         function voltar() {
